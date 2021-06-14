@@ -6,7 +6,7 @@
 /*   By: seruiz <seruiz@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:13:10 by seruiz            #+#    #+#             */
-/*   Updated: 2021/06/14 13:35:53 by seruiz           ###   ########lyon.fr   */
+/*   Updated: 2021/06/14 14:18:40 by seruiz           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,8 @@ int	main(int argc, char **argv)
 	t_struct	*s;
 	t_philo		*philos;
 	int			i;
-	int			ret;
 
 	i = 0;
-	ret = 0;
 	s = NULL;
 	philos = NULL;
 	s = malloc(sizeof(t_struct));
@@ -52,6 +50,7 @@ int	main(int argc, char **argv)
 	philos = malloc(sizeof(t_philo) * (s->philo_nb));
 	if (init_struct(s, philos) == 1)
 		return (1);
+	philos->s->start_time = get_time();
 	while (i < s->philo_nb)
 	{
 		philos[i].pid = fork();
@@ -61,5 +60,5 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	wait_to_kill(s, philos);
-	return (ft_exit(s, ret, philos));
+	return (ft_exit(s, 0, philos));
 }

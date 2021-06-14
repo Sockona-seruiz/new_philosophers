@@ -6,7 +6,7 @@
 /*   By: seruiz <seruiz@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:13:15 by seruiz            #+#    #+#             */
-/*   Updated: 2021/06/14 13:33:57 by seruiz           ###   ########lyon.fr   */
+/*   Updated: 2021/06/14 14:17:49 by seruiz           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	*routine_loop(void	*arg)
 	pthread_t	th_id;
 
 	philo = arg;
-	philo->s->start_time = get_time();
 	philo->s->philo_id = philo->id;
 	philo->s->last_meal_t = get_time();
 	s_cpy = *philo->s;
