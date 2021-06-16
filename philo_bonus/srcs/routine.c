@@ -6,7 +6,7 @@
 /*   By: seruiz <seruiz@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 17:13:15 by seruiz            #+#    #+#             */
-/*   Updated: 2021/06/14 14:17:49 by seruiz           ###   ########lyon.fr   */
+/*   Updated: 2021/06/16 09:48:56 by seruiz           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	*routine_loop(void	*arg)
 			speak(philo->s, SLEEP, philo->id);
 			custom_usleep(philo->s->ttsleep);
 			philo->state = THINK;
+			speak(philo->s, THINK, philo->id);
 		}
 	}
 	return (0);
